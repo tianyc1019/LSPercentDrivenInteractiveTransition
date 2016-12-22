@@ -1,0 +1,2 @@
+# LSPercentDrivenInteractiveTransition
+ 使用UIPercentDrivenInteractiveTransition自定义导航栏的交互式动画
