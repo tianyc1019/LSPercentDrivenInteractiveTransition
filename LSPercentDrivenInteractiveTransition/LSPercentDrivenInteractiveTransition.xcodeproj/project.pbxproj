@@ -20,6 +20,7 @@
 		31E5F8FF1E0BADE6006DD985 /* LSPresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E5F8F81E0BADE6006DD985 /* LSPresentAnimation.swift */; };
 		31E5F9001E0BADE6006DD985 /* LSPushAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E5F8F91E0BADE6006DD985 /* LSPushAnimation.swift */; };
 		31E5F9031E0BADEE006DD985 /* secondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E5F9021E0BADEE006DD985 /* secondViewController.swift */; };
+		31E5F9071E0BC3CA006DD985 /* LSNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E5F9061E0BC3CA006DD985 /* LSNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		31E5F8F81E0BADE6006DD985 /* LSPresentAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSPresentAnimation.swift; sourceTree = "<group>"; };
 		31E5F8F91E0BADE6006DD985 /* LSPushAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSPushAnimation.swift; sourceTree = "<group>"; };
 		31E5F9021E0BADEE006DD985 /* secondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = secondViewController.swift; sourceTree = "<group>"; };
+		31E5F9061E0BC3CA006DD985 /* LSNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,11 +144,12 @@
 		31E5F8F31E0BADE6006DD985 /* LSInteractiveAnimation */ = {
 			isa = PBXGroup;
 			children = (
-				31E5F8F41E0BADE6006DD985 /* LSDismissAnimation.swift */,
 				31E5F8F61E0BADE6006DD985 /* LSPercentDrivenInteractiveTransition.swift */,
+				31E5F8F41E0BADE6006DD985 /* LSDismissAnimation.swift */,
 				31E5F8F71E0BADE6006DD985 /* LSPopAnimation.swift */,
 				31E5F8F81E0BADE6006DD985 /* LSPresentAnimation.swift */,
 				31E5F8F91E0BADE6006DD985 /* LSPushAnimation.swift */,
+				31E5F9061E0BC3CA006DD985 /* LSNavigationController.swift */,
 			);
 			path = LSInteractiveAnimation;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				31E5F8FF1E0BADE6006DD985 /* LSPresentAnimation.swift in Sources */,
 				31E5F8C61E0BADAF006DD985 /* AppDelegate.swift in Sources */,
 				31E5F8FD1E0BADE6006DD985 /* LSPercentDrivenInteractiveTransition.swift in Sources */,
+				31E5F9071E0BC3CA006DD985 /* LSNavigationController.swift in Sources */,
 				31E5F8FB1E0BADE6006DD985 /* LSDismissAnimation.swift in Sources */,
 				31E5F9031E0BADEE006DD985 /* secondViewController.swift in Sources */,
 				31E5F9001E0BADE6006DD985 /* LSPushAnimation.swift in Sources */,

@@ -22,12 +22,12 @@ class LSPopAnimation: NSObject ,UIViewControllerAnimatedTransitioning  {
         var destTransform: CGAffineTransform!
         containerView.insertSubview((toViewController?.view)!, belowSubview: (fromViewController?.view)!)
         destView = fromViewController?.view
-        destView.frame = CGRect(x:0,y:0,width:destView.frame.width,height:destView.frame.height)
-//        destTransform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+//        destView.frame = CGRect(x:0,y:0,width:destView.frame.width,height:destView.frame.height)
+        destTransform = CGAffineTransform(scaleX: 0.1, y: 0.1)
 //        print("aaaaa===="+"\(transitionDuration(using: transitionContext))")
         UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
-//            destView.transform = destTransform
-            destView.frame = CGRect(x:(fromViewController?.view.frame.width)!,y:0,width:destView.frame.width,height:destView.frame.height)
+            destView.transform = destTransform
+//            destView.frame = CGRect(x:(fromViewController?.view.frame.width)!,y:0,width:destView.frame.width,height:destView.frame.height)
         }, completion: ({completed in
             transitionContext.completeTransition(true)
         }))

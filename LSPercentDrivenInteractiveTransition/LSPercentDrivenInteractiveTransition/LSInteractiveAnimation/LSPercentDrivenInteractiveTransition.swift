@@ -8,46 +8,55 @@
 
 import UIKit
 
-class LSPercentDrivenInteractiveTransition: UIPercentDrivenInteractiveTransition {
-    var interactionInProgress = false //用于指示交互是否在进行中。
-    private var shouldCompleteTransition = false //需要在内部使用shouldCompleteTransition来控制过渡，随后你会看到使用方法
-    private weak var navVC : UINavigationController!//交互控制器直接负责打开/关闭视图控制器，所以我们需要把当前的视图控制器存储在viewController里，便于引用
+class LSPercentDrivenInteractiveTransition: UIPercentDrivenInteractiveTransition   {
     
-    func wire(to viewController: UINavigationController!) {
-        self.navVC = viewController
-        prepareGestureRecognizer(in: viewController.view)
-    }
-    private func prepareGestureRecognizer(in view : UIView)
-    {
-        let gesture = UIScreenEdgePanGestureRecognizer(target:self,action:#selector(handleGesture(gestureRecognizer:)))
-        gesture.edges = .left
-        view.addGestureRecognizer(gesture)
-    }
-    func handleGesture(gestureRecognizer: UIScreenEdgePanGestureRecognizer) {
-        var progress = gestureRecognizer.translation(in: gestureRecognizer.view?.superview).x / navVC.view.bounds.size.width
-        progress = min(1.0, max(0.0, progress))
-//        let translation = gestureRecognizer.translation(in: gestureRecognizer.view?.superview)
-//        var progress = Float(translation.x / 200)
-//        progress = fminf(fmaxf(progress, 0.0), 1.0)
+    
+    ///以下是自定义交互控制器
+    var transitionContext : UIViewControllerContextTransitioning!
+    var transitingView : UIView!
+    
+    
+    
+    
+    /// 以下----自定义交互控制器
+    override func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning) {
+        self.transitionContext = transitionContext
         
-        print("\(progress)")
-        if gestureRecognizer.state == UIGestureRecognizerState.began {
-            print("Began")
-            
-            interactionInProgress = true
-            navVC.popViewController(animated: true)
-        } else if gestureRecognizer.state == UIGestureRecognizerState.changed {
-            self.update(CGFloat(progress))
-            print("Changed")
-        } else if gestureRecognizer.state == UIGestureRecognizerState.ended || gestureRecognizer.state == UIGestureRecognizerState.cancelled {
-            if progress > 0.5 {
-                self.finish()
-                print("finished")
-            } else {
-                self.cancel()
-                print("canceled")
-            }
-            
+        let containerView = transitionContext.containerView
+        let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
+        let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
+        
+        containerView.insertSubview((toViewController?.view)!, belowSubview: (fromViewController?.view)!)
+        
+        self.transitingView = fromViewController?.view
+
+    }
+    override func update(_ percentComplete: CGFloat) {
+        let scale = CGFloat(fabsf(Float(percentComplete - CGFloat(1.0))))
+        transitingView?.transform = CGAffineTransform(scaleX: scale, y: scale)
+        transitionContext?.updateInteractiveTransition(percentComplete)
+    }
+    
+    
+    
+    func finishBy(cancelled: Bool) {
+        if cancelled {
+            UIView.animate(withDuration: 0.4, animations: {
+                self.transitingView!.transform = CGAffineTransform(scaleX: 1, y: 1)
+            }, completion: {completed in
+                self.transitionContext!.cancelInteractiveTransition()
+                self.transitionContext!.completeTransition(false)
+            })
+        } else {
+            UIView.animate(withDuration: 0.4, animations: {
+                print(self.transitingView)
+                self.transitingView!.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+                print(self.transitingView)
+            }, completion: {completed in
+                self.transitionContext!.finishInteractiveTransition()
+                self.transitionContext!.completeTransition(true)
+            })
         }
     }
+    
 }
