@@ -71,6 +71,7 @@ class LSNavigationController: UINavigationController , UINavigationControllerDel
 //        }
     ///以下是自定义交互器
     func handleGesture(gestureRecognizer: UIScreenEdgePanGestureRecognizer) {
+        
         var progress = gestureRecognizer.translation(in: gestureRecognizer.view?.superview).x / self.view.bounds.size.width
         progress = min(1.0, max(0.0, progress))
         //        let translation = gestureRecognizer.translation(in: gestureRecognizer.view?.superview)
@@ -80,6 +81,10 @@ class LSNavigationController: UINavigationController , UINavigationControllerDel
         print("\(progress)")
         if gestureRecognizer.state == UIGestureRecognizerState.began {
             print("Began")
+            
+            if interactionInProgress == true {
+                return
+            }
             self.interactivePopTransition = LSPercentDrivenInteractiveTransition()
             interactionInProgress = true
             self.popViewController(animated: true)
@@ -95,9 +100,10 @@ class LSNavigationController: UINavigationController , UINavigationControllerDel
     
     /// UINavigationControllerDelegate 以下两个协议均实现时，以第二个为准，
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        if operation == UINavigationControllerOperation.push {
-            return LSPushAnimation.init()
-        }else if operation == UINavigationControllerOperation.pop {
+//        if operation == UINavigationControllerOperation.push {
+//            return LSPushAnimation.init()
+//        }else
+        if operation == UINavigationControllerOperation.pop {
             return LSPopAnimation.init()
         }
         return nil

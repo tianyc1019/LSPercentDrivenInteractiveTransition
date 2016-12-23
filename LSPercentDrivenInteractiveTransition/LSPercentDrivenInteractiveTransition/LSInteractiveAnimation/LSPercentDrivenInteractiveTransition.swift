@@ -13,48 +13,77 @@ class LSPercentDrivenInteractiveTransition: UIPercentDrivenInteractiveTransition
     
     ///以下是自定义交互控制器
     var transitionContext : UIViewControllerContextTransitioning!
-    var transitingView : UIView!
-    
-    
+    var formView : UIView!
+    var toView : UIView!
+    let x_to : CGFloat = -100.0 ///toview起始x坐标
     
     
     /// 以下----自定义交互控制器
     override func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning) {
-        self.transitionContext = transitionContext
+        
         
         let containerView = transitionContext.containerView
         let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
+        if toViewController == nil {
+            ///预防rootviewcontroller触发
+            return
+        }
+        self.transitionContext = transitionContext
         let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
         
         containerView.insertSubview((toViewController?.view)!, belowSubview: (fromViewController?.view)!)
         
-        self.transitingView = fromViewController?.view
+        self.formView = fromViewController?.view
+        self.toView = toViewController?.view
+        self.toView.frame = CGRect(x:x_to,y:0,width:self.toView.frame.width,height:self.toView.frame.height)
 
     }
     override func update(_ percentComplete: CGFloat) {
-        let scale = CGFloat(fabsf(Float(percentComplete - CGFloat(1.0))))
-        transitingView?.transform = CGAffineTransform(scaleX: scale, y: scale)
+//        let scale = CGFloat(fabsf(Float(percentComplete - CGFloat(1.0))))
+//        formView?.transform = CGAffineTransform(scaleX: scale, y: scale)
+//        transitionContext?.updateInteractiveTransition(percentComplete)
+        
+        if transitionContext == nil {
+            ///预防rootviewcontroller触发
+            return
+        }
+        
+        self.formView?.frame = CGRect(x:(self.formView?.frame.width)!*percentComplete, y:0, width:(self.formView?.frame.width)! , height: (self.formView?.frame.height)!)
+        self.toView?.frame = CGRect(x:self.x_to+CGFloat(fabsf(Float(self.x_to*percentComplete))), y:0, width:(self.toView?.frame.width)! , height: (self.toView?.frame.height)!)
         transitionContext?.updateInteractiveTransition(percentComplete)
+        
     }
     
     
     
     func finishBy(cancelled: Bool) {
+        if self.transitionContext == nil {
+            ///预防rootviewcontroller触发
+            return
+        }
         if cancelled {
-            UIView.animate(withDuration: 0.4, animations: {
-                self.transitingView!.transform = CGAffineTransform(scaleX: 1, y: 1)
+            UIView.animate(withDuration: 0.2, animations: {
+//                self.formView!.transform = CGAffineTransform(scaleX: 1, y: 1)
+                self.formView?.frame = CGRect(x:0, y:0, width:(self.formView?.frame.width)! , height: (self.formView?.frame.height)!)
+                self.toView?.frame = CGRect(x:self.x_to, y:0, width:(self.toView?.frame.width)! , height: (self.toView?.frame.height)!)
             }, completion: {completed in
                 self.transitionContext!.cancelInteractiveTransition()
                 self.transitionContext!.completeTransition(false)
+                self.transitionContext = nil
+                self.toView = nil
+                self.formView = nil
             })
         } else {
-            UIView.animate(withDuration: 0.4, animations: {
-                print(self.transitingView)
-                self.transitingView!.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-                print(self.transitingView)
+            UIView.animate(withDuration: 0.2, animations: {
+//                self.formView!.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+                self.formView?.frame = CGRect(x:(self.formView?.frame.width)!, y:0, width:(self.formView?.frame.width)! , height: (self.formView?.frame.height)!)
+                self.toView?.frame = CGRect(x:0, y:0, width:(self.toView?.frame.width)! , height: (self.toView?.frame.height)!)
             }, completion: {completed in
                 self.transitionContext!.finishInteractiveTransition()
                 self.transitionContext!.completeTransition(true)
+                self.transitionContext = nil
+                self.toView = nil
+                self.formView = nil
             })
         }
     }

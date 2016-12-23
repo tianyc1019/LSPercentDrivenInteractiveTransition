@@ -14,19 +14,21 @@ class LSPresentAnimation: NSObject,UIViewControllerAnimatedTransitioning {
         return 0.4
     }
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        let containerView = transitionContext.containerView
-        let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
-        let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
         
-        var destView: UIView!
-        var destTransform: CGAffineTransform!
-        containerView.insertSubview((toViewController?.view)!, aboveSubview: (fromViewController?.view)!)
-        destView = toViewController?.view
-        destView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-        destTransform = CGAffineTransform(scaleX: 1, y: 1)
+ 
+        
+        
+        let containerView = transitionContext.containerView
+        let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) as! thirdViewController
+        let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) as! secondViewController
+        
+        let destView = fromViewController.btn_present
+        
+        
+        
         
         UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
-            destView.transform = destTransform
+            destView?.frame = CGRect(x:0 , y:0 , width:fromViewController.view.frame.width,height:fromViewController.view.frame.height )
         }, completion: ({completed in
             transitionContext.completeTransition(true)
         }))

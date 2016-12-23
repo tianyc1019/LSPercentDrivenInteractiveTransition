@@ -9,12 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController   {
+    
+    
         override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.title = "viewController"
         self.view.backgroundColor = UIColor.green
-        
+        self.navigationController?.isNavigationBarHidden = true
         
         
         let btn = UIButton.init(type: UIButtonType.custom)
@@ -23,6 +25,8 @@ class ViewController: UIViewController   {
         btn.setTitle("push", for: UIControlState.normal)
         btn.addTarget(self, action:#selector(push) , for: UIControlEvents.touchUpInside)
 
+            
+        
         
     }
 

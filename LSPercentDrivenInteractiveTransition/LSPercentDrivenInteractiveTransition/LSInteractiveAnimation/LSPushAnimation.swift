@@ -11,7 +11,7 @@ import UIKit
 class LSPushAnimation: NSObject,UIViewControllerAnimatedTransitioning  {
     //UIViewControllerAnimatedTransitioning
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.4
+        return 0.35
     }
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let containerView = transitionContext.containerView
