@@ -15,24 +15,24 @@ class LSPopAnimation: NSObject ,UIViewControllerAnimatedTransitioning  {
     }
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let containerView = transitionContext.containerView
-        let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
-        let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
+        guard let fromViewController = transitionContext.viewController(forKey: .from),
+            let toViewController = transitionContext.viewController(forKey: .to) else {
+                ///预防rootviewcontroller触发
+                return
+        }
         
-        var destView: UIView!
+        var fromView: UIView!
         var toView : UIView!
-        containerView.insertSubview((toViewController?.view)!, belowSubview: (fromViewController?.view)!)
-        destView = fromViewController?.view
-        destView.frame = CGRect(x:0,y:0,width:destView.frame.width,height:destView.frame.height)
-        toView = toViewController?.view
-        toView.frame = CGRect(x:-200,y:0,width:destView.frame.width,height:destView.frame.height)
+        containerView.insertSubview((toViewController.view)!, belowSubview: (fromViewController.view)!)
+        fromView = fromViewController.view
+        fromView.frame = CGRect(x:0,y:0,width:fromView.frame.width,height:fromView.frame.height)
+        toView = toViewController.view
+        toView.frame = CGRect(x:-200,y:0,width:fromView.frame.width,height:fromView.frame.height)
 
         
-//        var destTransform: CGAffineTransform!
-//        destTransform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
-//            destView.transform = destTransform
-            destView.frame = CGRect(x:(fromViewController?.view.frame.width)!,y:0,width:destView.frame.width,height:destView.frame.height)
-            toView.frame = CGRect(x:0,y:0,width:destView.frame.width,height:destView.frame.height)
+            fromView.frame = CGRect(x:(fromView.frame.width),y:0,width:fromView.frame.width,height:fromView.frame.height)
+            toView.frame = CGRect(x:0,y:0,width:toView.frame.width,height:toView.frame.height)
         }, completion: ({completed in
             transitionContext.completeTransition(true)
         }))

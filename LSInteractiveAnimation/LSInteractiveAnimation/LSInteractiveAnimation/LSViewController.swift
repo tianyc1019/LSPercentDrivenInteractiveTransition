@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LSViewController: UIViewController , UINavigationControllerDelegate ,UIViewControllerTransitioningDelegate {
+class LSViewController: UIViewController  ,UIViewControllerTransitioningDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()

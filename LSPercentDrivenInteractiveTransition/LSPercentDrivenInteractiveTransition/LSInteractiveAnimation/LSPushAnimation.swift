@@ -15,13 +15,16 @@ class LSPushAnimation: NSObject,UIViewControllerAnimatedTransitioning  {
     }
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let containerView = transitionContext.containerView
-        let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
-        let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
+        guard let fromViewController = transitionContext.viewController(forKey: .from),
+            let toViewController = transitionContext.viewController(forKey: .to) else {
+                return
+        }
+
         
         var destView: UIView!
         var destTransform: CGAffineTransform!
-        containerView.insertSubview((toViewController?.view)!, aboveSubview: (fromViewController?.view)!)
-        destView = toViewController?.view
+        containerView.insertSubview((toViewController.view)!, aboveSubview: (fromViewController.view)!)
+        destView = toViewController.view
         
         
         

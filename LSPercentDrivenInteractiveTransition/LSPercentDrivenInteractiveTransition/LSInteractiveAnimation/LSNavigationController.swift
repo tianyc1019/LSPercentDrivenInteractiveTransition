@@ -109,12 +109,12 @@ class LSNavigationController: UINavigationController , UINavigationControllerDel
         return nil
     }
     
-    /// 当返回值为nil时，上面的协议返回的push和pop动画才会有作用
-    func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        if interactivePopTransition != nil {
-            return interactivePopTransition
-        }
-        return nil
-    }
+//    /// 当返回值为nil时，上面的协议返回的push和pop动画才会有作用
+//    func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+//        if interactivePopTransition != nil {
+//            return interactivePopTransition
+//        }
+//        return nil
+//    }
 
 }

@@ -23,25 +23,25 @@ class LSPercentDrivenInteractiveTransition: UIPercentDrivenInteractiveTransition
         
         
         let containerView = transitionContext.containerView
-        let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
-        if toViewController == nil {
-            ///预防rootviewcontroller触发
-            return
+        
+        guard let fromViewController = transitionContext.viewController(forKey: .from),
+            let toViewController = transitionContext.viewController(forKey: .to) else {
+                ///预防rootviewcontroller触发
+                return
         }
+        
+        
         self.transitionContext = transitionContext
-        let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
         
-        containerView.insertSubview((toViewController?.view)!, belowSubview: (fromViewController?.view)!)
         
-        self.formView = fromViewController?.view
-        self.toView = toViewController?.view
+        containerView.insertSubview((toViewController.view)!, belowSubview: (fromViewController.view)!)
+        
+        self.formView = fromViewController.view
+        self.toView = toViewController.view
         self.toView.frame = CGRect(x:x_to,y:0,width:self.toView.frame.width,height:self.toView.frame.height)
 
     }
     override func update(_ percentComplete: CGFloat) {
-//        let scale = CGFloat(fabsf(Float(percentComplete - CGFloat(1.0))))
-//        formView?.transform = CGAffineTransform(scaleX: scale, y: scale)
-//        transitionContext?.updateInteractiveTransition(percentComplete)
         
         if transitionContext == nil {
             ///预防rootviewcontroller触发
@@ -63,7 +63,6 @@ class LSPercentDrivenInteractiveTransition: UIPercentDrivenInteractiveTransition
         }
         if cancelled {
             UIView.animate(withDuration: 0.2, animations: {
-//                self.formView!.transform = CGAffineTransform(scaleX: 1, y: 1)
                 self.formView?.frame = CGRect(x:0, y:0, width:(self.formView?.frame.width)! , height: (self.formView?.frame.height)!)
                 self.toView?.frame = CGRect(x:self.x_to, y:0, width:(self.toView?.frame.width)! , height: (self.toView?.frame.height)!)
             }, completion: {completed in
@@ -75,7 +74,6 @@ class LSPercentDrivenInteractiveTransition: UIPercentDrivenInteractiveTransition
             })
         } else {
             UIView.animate(withDuration: 0.2, animations: {
-//                self.formView!.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
                 self.formView?.frame = CGRect(x:(self.formView?.frame.width)!, y:0, width:(self.formView?.frame.width)! , height: (self.formView?.frame.height)!)
                 self.toView?.frame = CGRect(x:0, y:0, width:(self.toView?.frame.width)! , height: (self.toView?.frame.height)!)
             }, completion: {completed in

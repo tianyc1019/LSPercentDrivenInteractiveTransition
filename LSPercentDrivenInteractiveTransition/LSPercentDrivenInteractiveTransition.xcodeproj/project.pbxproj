@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		316CAF9C1E0CD61600A6EE01 /* LSViewControllerTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316CAF9B1E0CD61600A6EE01 /* LSViewControllerTransitioning.swift */; };
 		31E5F8C61E0BADAF006DD985 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E5F8C51E0BADAF006DD985 /* AppDelegate.swift */; };
 		31E5F8C81E0BADAF006DD985 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E5F8C71E0BADAF006DD985 /* ViewController.swift */; };
 		31E5F8CB1E0BADAF006DD985 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31E5F8C91E0BADAF006DD985 /* Main.storyboard */; };
@@ -15,15 +14,11 @@
 		31E5F8D01E0BADB0006DD985 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31E5F8CE1E0BADB0006DD985 /* LaunchScreen.storyboard */; };
 		31E5F8DB1E0BADB0006DD985 /* LSPercentDrivenInteractiveTransitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E5F8DA1E0BADB0006DD985 /* LSPercentDrivenInteractiveTransitionTests.swift */; };
 		31E5F8E61E0BADB0006DD985 /* LSPercentDrivenInteractiveTransitionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E5F8E51E0BADB0006DD985 /* LSPercentDrivenInteractiveTransitionUITests.swift */; };
-		31E5F8FB1E0BADE6006DD985 /* LSDismissAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E5F8F41E0BADE6006DD985 /* LSDismissAnimation.swift */; };
 		31E5F8FD1E0BADE6006DD985 /* LSPercentDrivenInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E5F8F61E0BADE6006DD985 /* LSPercentDrivenInteractiveTransition.swift */; };
 		31E5F8FE1E0BADE6006DD985 /* LSPopAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E5F8F71E0BADE6006DD985 /* LSPopAnimation.swift */; };
-		31E5F8FF1E0BADE6006DD985 /* LSPresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E5F8F81E0BADE6006DD985 /* LSPresentAnimation.swift */; };
 		31E5F9001E0BADE6006DD985 /* LSPushAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E5F8F91E0BADE6006DD985 /* LSPushAnimation.swift */; };
 		31E5F9031E0BADEE006DD985 /* secondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E5F9021E0BADEE006DD985 /* secondViewController.swift */; };
 		31E5F9071E0BC3CA006DD985 /* LSNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E5F9061E0BC3CA006DD985 /* LSNavigationController.swift */; };
-		31E5FA571E0CC992006DD985 /* c2bfda7fgw1ewg5136wc8j20yi0pw416.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 31E5FA561E0CC992006DD985 /* c2bfda7fgw1ewg5136wc8j20yi0pw416.jpg */; };
-		31E5FA591E0CCA3F006DD985 /* thirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E5FA581E0CCA3F006DD985 /* thirdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +39,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		316CAF9B1E0CD61600A6EE01 /* LSViewControllerTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSViewControllerTransitioning.swift; sourceTree = "<group>"; };
 		31E5F8C21E0BADAF006DD985 /* LSPercentDrivenInteractiveTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LSPercentDrivenInteractiveTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31E5F8C51E0BADAF006DD985 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31E5F8C71E0BADAF006DD985 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,15 +52,11 @@
 		31E5F8E11E0BADB0006DD985 /* LSPercentDrivenInteractiveTransitionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LSPercentDrivenInteractiveTransitionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31E5F8E51E0BADB0006DD985 /* LSPercentDrivenInteractiveTransitionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSPercentDrivenInteractiveTransitionUITests.swift; sourceTree = "<group>"; };
 		31E5F8E71E0BADB0006DD985 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		31E5F8F41E0BADE6006DD985 /* LSDismissAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSDismissAnimation.swift; sourceTree = "<group>"; };
 		31E5F8F61E0BADE6006DD985 /* LSPercentDrivenInteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSPercentDrivenInteractiveTransition.swift; sourceTree = "<group>"; };
 		31E5F8F71E0BADE6006DD985 /* LSPopAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSPopAnimation.swift; sourceTree = "<group>"; };
-		31E5F8F81E0BADE6006DD985 /* LSPresentAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSPresentAnimation.swift; sourceTree = "<group>"; };
 		31E5F8F91E0BADE6006DD985 /* LSPushAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSPushAnimation.swift; sourceTree = "<group>"; };
 		31E5F9021E0BADEE006DD985 /* secondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = secondViewController.swift; sourceTree = "<group>"; };
 		31E5F9061E0BC3CA006DD985 /* LSNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSNavigationController.swift; sourceTree = "<group>"; };
-		31E5FA561E0CC992006DD985 /* c2bfda7fgw1ewg5136wc8j20yi0pw416.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = c2bfda7fgw1ewg5136wc8j20yi0pw416.jpg; sourceTree = "<group>"; };
-		31E5FA581E0CCA3F006DD985 /* thirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = thirdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,12 +107,10 @@
 		31E5F8C41E0BADAF006DD985 /* LSPercentDrivenInteractiveTransition */ = {
 			isa = PBXGroup;
 			children = (
-				31E5FA561E0CC992006DD985 /* c2bfda7fgw1ewg5136wc8j20yi0pw416.jpg */,
 				31E5F8F31E0BADE6006DD985 /* LSInteractiveAnimation */,
 				31E5F8C51E0BADAF006DD985 /* AppDelegate.swift */,
 				31E5F8C71E0BADAF006DD985 /* ViewController.swift */,
 				31E5F9021E0BADEE006DD985 /* secondViewController.swift */,
-				31E5FA581E0CCA3F006DD985 /* thirdViewController.swift */,
 				31E5F8C91E0BADAF006DD985 /* Main.storyboard */,
 				31E5F8CC1E0BADB0006DD985 /* Assets.xcassets */,
 				31E5F8CE1E0BADB0006DD985 /* LaunchScreen.storyboard */,
@@ -154,9 +142,6 @@
 			children = (
 				31E5F9061E0BC3CA006DD985 /* LSNavigationController.swift */,
 				31E5F8F61E0BADE6006DD985 /* LSPercentDrivenInteractiveTransition.swift */,
-				316CAF9B1E0CD61600A6EE01 /* LSViewControllerTransitioning.swift */,
-				31E5F8F81E0BADE6006DD985 /* LSPresentAnimation.swift */,
-				31E5F8F41E0BADE6006DD985 /* LSDismissAnimation.swift */,
 				31E5F8F91E0BADE6006DD985 /* LSPushAnimation.swift */,
 				31E5F8F71E0BADE6006DD985 /* LSPopAnimation.swift */,
 			);
@@ -272,7 +257,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				31E5F8D01E0BADB0006DD985 /* LaunchScreen.storyboard in Resources */,
-				31E5FA571E0CC992006DD985 /* c2bfda7fgw1ewg5136wc8j20yi0pw416.jpg in Resources */,
 				31E5F8CD1E0BADB0006DD985 /* Assets.xcassets in Resources */,
 				31E5F8CB1E0BADAF006DD985 /* Main.storyboard in Resources */,
 			);
@@ -300,14 +284,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				31E5F8C81E0BADAF006DD985 /* ViewController.swift in Sources */,
-				316CAF9C1E0CD61600A6EE01 /* LSViewControllerTransitioning.swift in Sources */,
 				31E5F8FE1E0BADE6006DD985 /* LSPopAnimation.swift in Sources */,
-				31E5F8FF1E0BADE6006DD985 /* LSPresentAnimation.swift in Sources */,
 				31E5F8C61E0BADAF006DD985 /* AppDelegate.swift in Sources */,
 				31E5F8FD1E0BADE6006DD985 /* LSPercentDrivenInteractiveTransition.swift in Sources */,
-				31E5FA591E0CCA3F006DD985 /* thirdViewController.swift in Sources */,
 				31E5F9071E0BC3CA006DD985 /* LSNavigationController.swift in Sources */,
-				31E5F8FB1E0BADE6006DD985 /* LSDismissAnimation.swift in Sources */,
 				31E5F9031E0BADEE006DD985 /* secondViewController.swift in Sources */,
 				31E5F9001E0BADE6006DD985 /* LSPushAnimation.swift in Sources */,
 			);
