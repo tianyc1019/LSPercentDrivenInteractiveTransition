@@ -146,7 +146,7 @@ extension LSAnimationManage : UIViewControllerAnimatedTransitioning {
     
     /// 设置动画时间
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 1.0
+        return 0.5
     }
     
     /// 动画效果

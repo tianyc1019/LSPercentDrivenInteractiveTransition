@@ -52,7 +52,7 @@ extension LSPhotoController{
         
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.bounces = false
+        collectionView.bounces = true
         collectionView.register(LSPhotoCell.self, forCellWithReuseIdentifier: ID)
         collectionView.frame = view.bounds
         self.view.addSubview(collectionView)

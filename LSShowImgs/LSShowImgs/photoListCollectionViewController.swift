@@ -30,8 +30,8 @@ class photoListCollectionViewController: UICollectionViewController {
     }
     func loadData(_ offset : Int){
         
-        for i in 0..<18 {
-            let dic : [String:Any] = ["q_pic_url":"\(i%9)"+".jpg","z_pic_url":"\(i%9)"+".jpg","isUrl":false]
+        for i in 0..<28 {
+            let dic : [String:Any] = ["q_pic_url":"\(i%14)"+".jpg","z_pic_url":"\(i%14)"+".jpg","isUrl":false]
             
             let item : LSPhotoItem = LSPhotoItem.init(dict: dic)
             
