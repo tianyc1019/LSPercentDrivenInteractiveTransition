@@ -8,6 +8,8 @@
 
 import UIKit
 private let ID :String = "photoCellID"
+
+
 class LSPhotoController: UIViewController {
     fileprivate lazy var collectionView :UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: LSPhotoFlowLayout())
     var phoths : [LSPhotoItem]?
@@ -17,7 +19,7 @@ class LSPhotoController: UIViewController {
 
         // Do any additional setup after loading the view.
         // 设置图片浏览分页间距
-        view.frame.size.width += 10
+        view.frame.size.width += spacing
         self.view.backgroundColor = UIColor.purple
         self.setUpUI()
         // 设置选中的图片
@@ -91,7 +93,7 @@ extension LSPhotoController{
         // 1.获取当前正在显示的cell
         let cell = collectionView.visibleCells[0] as! LSPhotoCell
         // 拿到cell显示的图片
-        guard let image = cell.imageV.image else{
+        guard let image = cell.zoomView?.imageView?.image else{
             return
         }
         // 2.保存到系统相册
@@ -111,11 +113,12 @@ extension LSPhotoController : UICollectionViewDataSource{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ID, for: indexPath) as! LSPhotoCell
         let photo = phoths![indexPath.item]
         cell.photo = photo
-        
+        cell.zoomView?.zoomDelegate = self
         // cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.blueColor():UIColor.greenColor()
         return cell
         
     }
+    
     
 }
 
@@ -123,6 +126,18 @@ extension LSPhotoController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         btnClick()
     }
+    
+
+    /// cell消失时将图片回复初始比例
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+       
+        guard let cell = collectionView.cellForItem(at: indexPath)  else {
+            return
+        }
+        let cell1 = cell as! LSPhotoCell
+        cell1.zoomView?.backScale()
+    }
+    
 }
 // MARK: - 动画结束delegate
 extension LSPhotoController : LSAnimationEndDelegate {
@@ -135,7 +150,7 @@ extension LSPhotoController : LSAnimationEndDelegate {
         // 2.设置imageView属性
         // 获取屏幕显示的cell
         let cell = collectionView.visibleCells[0] as! LSPhotoCell
-        imageView.image = cell.imageV.image
+        imageView.image = cell.zoomView?.imageView?.image
         imageView.frame = ls_calculateFrameWithImage(imageView.image!)
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
@@ -153,7 +168,11 @@ extension LSPhotoController : LSAnimationEndDelegate {
         
         return indexPh
     }
+}
 
-
-
+// MARK: - LSZoomDelegate
+extension LSPhotoController : LSZoomDelegate{
+    func ls_tapClick() {
+        btnClick()
+    }
 }

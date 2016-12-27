@@ -8,9 +8,12 @@
 
 import UIKit
 import Kingfisher
+///图片间距
+let spacing : CGFloat = 10.0
 class LSPhotoCell: UICollectionViewCell {
-    // MARK:- 懒加载控件
-    lazy var imageV :UIImageView = UIImageView()
+    
+    /// 图片控制
+    var zoomView: LSZoomView?
     // MARK:-重写模型属性的set方法
     var photo :LSPhotoItem? {
         didSet{
@@ -19,35 +22,7 @@ class LSPhotoCell: UICollectionViewCell {
             guard let photo = photo else{
                 return
             }
-            
-            // 2.获取小图片
-            if photo.isUrl! {
-                ///通过连接加载图片
-                KingfisherManager.shared.cache.retrieveImage(forKey: photo.q_pic_url, options: [.targetCache(KingfisherManager.shared.cache)]) { (image, type) in
-                    var smallImage = image
-                    if smallImage == nil {
-                        smallImage = UIImage(named: "empty_picture")
-                        // 4.设置图片
-                        let url = URL(string: photo.z_pic_url)
-                        /// KingfisherOptionsInfoItem.transition(ImageTransition.fade(0.3)) 使图片渐渐显示
-                        self.imageV.kf.setImage(with: ImageResource.init(downloadURL: url!), placeholder: smallImage, options: [KingfisherOptionsInfoItem.transition(ImageTransition.fade(0.3)),.targetCache(KingfisherManager.shared.cache)], progressBlock: nil, completionHandler: { (image, error, type, url) in
-                            if image != nil {
-                                self.imageV.frame = ls_calculateFrameWithImage(image!)
-                            }else{
-                                self.imageV.frame = ls_calculateFrameWithImage(smallImage!)
-                            }
-                        })
-                    }else{
-                        self.imageV.image = smallImage
-                        // 3.根据image计算出来放大之后的frame
-                        self.imageV.frame = ls_calculateFrameWithImage(smallImage!)
-                    }
-                }
-            }else{
-                imageV.image = UIImage.init(named: photo.z_pic_url)
-                self.imageV.frame = ls_calculateFrameWithImage(imageV.image!)
-            }
-            
+            zoomView?.photo = photo
         }
     }
     // MARK:- 重写init初始化方法
@@ -64,8 +39,11 @@ class LSPhotoCell: UICollectionViewCell {
 // MARK:-设置UI
 extension LSPhotoCell{
     func setUpUI(){
-        // 图片添加到cell的contentView上
-        self.contentView.addSubview(imageV)
-        self.imageV.contentMode = UIViewContentMode.scaleAspectFit
+        // 图片添加到cell的zoomView上
+        if zoomView == nil {
+//            let frame = UIScreen.main.bounds
+            zoomView = LSZoomView(frame:CGRect(x:0,y:0,width:self.frame.width-spacing,height:self.frame.height) )
+            self.addSubview(zoomView!)
+        }
     }
 }

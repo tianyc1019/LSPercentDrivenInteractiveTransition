@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3166276F1E12340E0039BCB6 /* LSZoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3166276E1E12340E0039BCB6 /* LSZoomView.swift */; };
 		31662D411E10E10B00870173 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31662D401E10E10B00870173 /* AppDelegate.swift */; };
 		31662D461E10E10B00870173 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31662D441E10E10B00870173 /* Main.storyboard */; };
 		31662D481E10E10B00870173 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31662D471E10E10B00870173 /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 
 /* Begin PBXFileReference section */
 		2D30817D04B89E1E5D6705F3 /* Pods-LSShowImgs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LSShowImgs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LSShowImgs/Pods-LSShowImgs.debug.xcconfig"; sourceTree = "<group>"; };
+		3166276E1E12340E0039BCB6 /* LSZoomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSZoomView.swift; sourceTree = "<group>"; };
 		31662D3D1E10E10B00870173 /* LSShowImgs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LSShowImgs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31662D401E10E10B00870173 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31662D451E10E10B00870173 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				31662D751E10F87C00870173 /* LSPhotoItem.swift */,
 				31662D771E10F8B000870173 /* LSPhotoCell.swift */,
 				31662D791E10F8DD00870173 /* LSPhotoFlowLayout.swift */,
+				3166276E1E12340E0039BCB6 /* LSZoomView.swift */,
 			);
 			path = LSShowImgs;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				31662D7A1E10F8DD00870173 /* LSPhotoFlowLayout.swift in Sources */,
 				31662D761E10F87C00870173 /* LSPhotoItem.swift in Sources */,
 				31662D781E10F8B000870173 /* LSPhotoCell.swift in Sources */,
+				3166276F1E12340E0039BCB6 /* LSZoomView.swift in Sources */,
 				31662D411E10E10B00870173 /* AppDelegate.swift in Sources */,
 				31662D951E111A0F00870173 /* photoListCollectionViewController.swift in Sources */,
 				31662D801E110FA500870173 /* photoFlowLayout.swift in Sources */,
