@@ -66,28 +66,7 @@ class LSAnimationManage: NSObject {
         formVC.present(photoVc, animated:true, completion: nil)
     }
     
-//    func saveToLocal() {
-//        //截屏
-//        let screenRect = UIScreen.mainScreen().bounds
-//        UIGraphicsBeginImageContext(screenRect.size)
-//        let ctx:CGContextRef = UIGraphicsGetCurrentContext()!
-//        self.view.layer.renderInContext(ctx)
-//        let image = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext();
-//        
-//        //保存相册
-//        UIImageWriteToSavedPhotosAlbum(image!, self, "image:didFinishSavingWithError:contextInfo:", nil)
-//        
-//    }
-//    
-//    func image(image:UIImage,didFinishSavingWithError error:NSError?,contextInfo:AnyObject) {
-//        
-//        if error != nil {
-//            K12ProgressHUD.showError("保存失败", view: self.view)
-//        } else {
-//            K12ProgressHUD.showSucess("保存成功", view: self.view)
-//        }
-//    }
+
     
     
 }

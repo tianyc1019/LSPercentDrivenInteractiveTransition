@@ -7,16 +7,10 @@ target 'LSShowImgs' do
 
   # Pods for LSShowImgs
 
-  pod 'Kingfisher', '~> 3.1.0'
+  pod 'Kingfisher'
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
 
-  target 'LSShowImgsTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'LSShowImgsUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+  
 
 end

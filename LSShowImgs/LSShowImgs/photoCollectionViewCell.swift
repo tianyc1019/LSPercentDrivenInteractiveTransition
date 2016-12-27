@@ -17,11 +17,15 @@ class photoCollectionViewCell: UICollectionViewCell {
             guard let photo = photo else{
                 return
             }
-//            let url = URL(string: photo.q_pic_url)
             self.addSubview(self.imgV)
-            self.imgV.image = UIImage.init(named: photo.q_pic_url)
+            if photo.isUrl! {
+                let url = URL(string: photo.q_pic_url)
+                self.imgV.kf.setImage(with: ImageResource.init(downloadURL: url!), placeholder:  UIImage.init(named: "empty_picture"), options: [KingfisherOptionsInfoItem.transition(ImageTransition.fade(0.3)),.targetCache(KingfisherManager.shared.cache)], progressBlock: nil, completionHandler: nil)
+            }else{
+                self.imgV.image = UIImage.init(named: photo.q_pic_url)
+            }
+            
             self.imgV.contentMode = UIViewContentMode.scaleAspectFit
-//            self.photoImgV.kf.setImage(with: ImageResource.init(downloadURL: url!), placeholder:  UIImage.init(named: "empty_picture"), options: [KingfisherOptionsInfoItem.transition(ImageTransition.fade(0.3)),.targetCache(KingfisherManager.shared.cache)], progressBlock: nil, completionHandler: nil)
         }
     }
     

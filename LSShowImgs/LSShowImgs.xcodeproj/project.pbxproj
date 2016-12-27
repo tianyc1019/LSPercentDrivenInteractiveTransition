@@ -35,8 +35,7 @@
 		317AFD4C1E11483400557693 /* 11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 317AFD3D1E11483400557693 /* 11.jpg */; };
 		317AFD4D1E11483400557693 /* 12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 317AFD3E1E11483400557693 /* 12.jpg */; };
 		317AFD4E1E11483400557693 /* 13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 317AFD3F1E11483400557693 /* 13.jpg */; };
-		982DF34A2D4B69EC3E66C2CD /* Pods_LSShowImgsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B98313C53AFB12F171ADD90 /* Pods_LSShowImgsUITests.framework */; };
-		CD576D7FD11E9DC73C5978EA /* Pods_LSShowImgsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39CB7A44E15105B1610FE035 /* Pods_LSShowImgsTests.framework */; };
+		317AFD521E12090800557693 /* LSAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317AFD511E12090800557693 /* LSAlamofire.swift */; };
 		E35A8847A1251BE7AFE3022A /* Pods_LSShowImgs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378780CC5CB875746C44FA93 /* Pods_LSShowImgs.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +58,6 @@
 
 /* Begin PBXFileReference section */
 		2D30817D04B89E1E5D6705F3 /* Pods-LSShowImgs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LSShowImgs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LSShowImgs/Pods-LSShowImgs.debug.xcconfig"; sourceTree = "<group>"; };
-		2FAC5B127C2FE00051AA49C2 /* Pods-LSShowImgsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LSShowImgsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LSShowImgsTests/Pods-LSShowImgsTests.release.xcconfig"; sourceTree = "<group>"; };
 		31662D3D1E10E10B00870173 /* LSShowImgs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LSShowImgs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31662D401E10E10B00870173 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31662D451E10E10B00870173 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -94,13 +92,11 @@
 		317AFD3D1E11483400557693 /* 11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 11.jpg; sourceTree = "<group>"; };
 		317AFD3E1E11483400557693 /* 12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 12.jpg; sourceTree = "<group>"; };
 		317AFD3F1E11483400557693 /* 13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 13.jpg; sourceTree = "<group>"; };
+		317AFD511E12090800557693 /* LSAlamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSAlamofire.swift; sourceTree = "<group>"; };
 		378780CC5CB875746C44FA93 /* Pods_LSShowImgs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LSShowImgs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39CB7A44E15105B1610FE035 /* Pods_LSShowImgsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LSShowImgsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B98313C53AFB12F171ADD90 /* Pods_LSShowImgsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LSShowImgsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FDAC5B550006DE629F83871 /* Pods-LSShowImgs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LSShowImgs.release.xcconfig"; path = "Pods/Target Support Files/Pods-LSShowImgs/Pods-LSShowImgs.release.xcconfig"; sourceTree = "<group>"; };
-		CB16CFE362D430434EC51FEC /* Pods-LSShowImgsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LSShowImgsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LSShowImgsUITests/Pods-LSShowImgsUITests.release.xcconfig"; sourceTree = "<group>"; };
-		E4F57A3213758DF73B245EFB /* Pods-LSShowImgsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LSShowImgsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LSShowImgsUITests/Pods-LSShowImgsUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		FF549FCD2B2A5D0EE7FD993C /* Pods-LSShowImgsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LSShowImgsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LSShowImgsTests/Pods-LSShowImgsTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +112,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD576D7FD11E9DC73C5978EA /* Pods_LSShowImgsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +119,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				982DF34A2D4B69EC3E66C2CD /* Pods_LSShowImgsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,10 +130,6 @@
 			children = (
 				2D30817D04B89E1E5D6705F3 /* Pods-LSShowImgs.debug.xcconfig */,
 				5FDAC5B550006DE629F83871 /* Pods-LSShowImgs.release.xcconfig */,
-				FF549FCD2B2A5D0EE7FD993C /* Pods-LSShowImgsTests.debug.xcconfig */,
-				2FAC5B127C2FE00051AA49C2 /* Pods-LSShowImgsTests.release.xcconfig */,
-				E4F57A3213758DF73B245EFB /* Pods-LSShowImgsUITests.debug.xcconfig */,
-				CB16CFE362D430434EC51FEC /* Pods-LSShowImgsUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -169,6 +159,7 @@
 		31662D3F1E10E10B00870173 /* LSShowImgs */ = {
 			isa = PBXGroup;
 			children = (
+				317AFD501E1208D500557693 /* Tools */,
 				31662D811E11188800870173 /* imgs */,
 				31662D6E1E10E1D200870173 /* LSShowImgs */,
 				31662D401E10E10B00870173 /* AppDelegate.swift */,
@@ -234,6 +225,14 @@
 			path = imgs;
 			sourceTree = "<group>";
 		};
+		317AFD501E1208D500557693 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				317AFD511E12090800557693 /* LSAlamofire.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		64856658BF5BFBA73FD55139 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,12 +270,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31662D681E10E10C00870173 /* Build configuration list for PBXNativeTarget "LSShowImgsTests" */;
 			buildPhases = (
-				6A655FE5B78DA3183FE4C2C6 /* [CP] Check Pods Manifest.lock */,
 				31662D4D1E10E10C00870173 /* Sources */,
 				31662D4E1E10E10C00870173 /* Frameworks */,
 				31662D4F1E10E10C00870173 /* Resources */,
-				458FA6A2D2698775034B98A8 /* [CP] Embed Pods Frameworks */,
-				A14A05C16D2F0C09E7B7C8B0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -292,12 +288,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31662D6B1E10E10C00870173 /* Build configuration list for PBXNativeTarget "LSShowImgsUITests" */;
 			buildPhases = (
-				1BD6F96D226BBADF1818DB53 /* [CP] Check Pods Manifest.lock */,
 				31662D581E10E10C00870173 /* Sources */,
 				31662D591E10E10C00870173 /* Frameworks */,
 				31662D5A1E10E10C00870173 /* Resources */,
-				2327849E02992F80BA331982 /* [CP] Embed Pods Frameworks */,
-				D3AC2B4EA93105CE0A983D40 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -427,36 +420,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		1BD6F96D226BBADF1818DB53 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		2327849E02992F80BA331982 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LSShowImgsUITests/Pods-LSShowImgsUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		341E9CDEC58A70C1B221C277 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -472,66 +435,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LSShowImgs/Pods-LSShowImgs-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		458FA6A2D2698775034B98A8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LSShowImgsTests/Pods-LSShowImgsTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6A655FE5B78DA3183FE4C2C6 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		A14A05C16D2F0C09E7B7C8B0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LSShowImgsTests/Pods-LSShowImgsTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D3AC2B4EA93105CE0A983D40 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LSShowImgsUITests/Pods-LSShowImgsUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -540,6 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31662D7E1E110DBD00870173 /* photoCollectionViewCell.swift in Sources */,
+				317AFD521E12090800557693 /* LSAlamofire.swift in Sources */,
 				31662D701E10E27300870173 /* LSAnimationManage.swift in Sources */,
 				31662D7A1E10F8DD00870173 /* LSPhotoFlowLayout.swift in Sources */,
 				31662D761E10F87C00870173 /* LSPhotoItem.swift in Sources */,
@@ -723,7 +627,6 @@
 		};
 		31662D691E10E10C00870173 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF549FCD2B2A5D0EE7FD993C /* Pods-LSShowImgsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -738,7 +641,6 @@
 		};
 		31662D6A1E10E10C00870173 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FAC5B127C2FE00051AA49C2 /* Pods-LSShowImgsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -753,7 +655,6 @@
 		};
 		31662D6C1E10E10C00870173 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4F57A3213758DF73B245EFB /* Pods-LSShowImgsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = LSShowImgsUITests/Info.plist;
@@ -767,7 +668,6 @@
 		};
 		31662D6D1E10E10C00870173 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CB16CFE362D430434EC51FEC /* Pods-LSShowImgsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = LSShowImgsUITests/Info.plist;

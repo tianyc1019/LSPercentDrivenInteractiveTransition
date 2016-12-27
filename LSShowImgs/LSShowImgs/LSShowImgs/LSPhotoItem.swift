@@ -15,12 +15,12 @@ class LSPhotoItem: NSObject {
     var q_pic_url : String = ""
     var z_pic_url : String = ""
     
-    init(dict: [String : Any]) {
-        super.init()
-        // 字典转模型
-        setValuesForKeys(dict)
-    }
-    
-    override func setValue(_ value: Any?, forUndefinedKey key: String) {
-    }
+//    init(dict: [String : Any]) {
+//        super.init()
+//        // 字典转模型
+//        setValuesForKeys(dict)
+//    }
+//    
+//    override func setValue(_ value: Any?, forUndefinedKey key: String) {
+//    }
 }

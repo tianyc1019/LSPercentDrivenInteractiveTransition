@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 private let reuseIdentifier = "photoCell"
 class photoListCollectionViewController: UICollectionViewController {
@@ -29,16 +30,27 @@ class photoListCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
     func loadData(_ offset : Int){
-        
-        for i in 0..<28 {
-            let dic : [String:Any] = ["q_pic_url":"\(i%14)"+".jpg","z_pic_url":"\(i%14)"+".jpg","isUrl":false]
-            
-            let item : LSPhotoItem = LSPhotoItem.init(dict: dic)
-            
-            self.photos.append(item)
+        // 创建请求管理者
+        let urlString = "http://diandianjilin.duapp.com/interface/cheap/product.php"
+        LSAlamofire.tools.ls_request(url: urlString, parameters: nil, success: { (data) in
+            print("======="+"\(data)")
+            self.photos = data!
+            self.collectionView?.reloadData()
+        }) { (error) in
+            print("\(error)")
         }
-        // 刷新表格
-        self.collectionView?.reloadData()
+        
+        
+        
+//        for i in 0..<28 {
+//            let item : LSPhotoItem = LSPhotoItem()
+//            item.q_pic_url = "\(i%14)"+".jpg"
+//            item.z_pic_url = "\(i%14)"+".jpg"
+//            item.isUrl = true
+//            self.photos.append(item)
+//        }
+//        // 刷新表格
+//        self.collectionView?.reloadData()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
