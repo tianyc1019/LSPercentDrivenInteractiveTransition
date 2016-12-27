@@ -62,7 +62,7 @@ extension LSPhotoController{
     
     func setUpBtn(){
         let btn : UIButton = UIButton(type: .custom)
-        btn.setTitle("关 闭", for: UIControlState())
+        btn.setTitle("关闭浏览", for: UIControlState())
         btn.backgroundColor = UIColor.orange
         let margin : CGFloat = 10
         let btnX :CGFloat = 10
@@ -74,8 +74,8 @@ extension LSPhotoController{
         self.view.addSubview(btn)
         
         let saveBtn : UIButton = UIButton(type: .custom)
-        saveBtn.setTitle("保 存", for: UIControlState())
-        saveBtn.backgroundColor = UIColor.red
+        saveBtn.setTitle("保存到相册", for: UIControlState())
+        saveBtn.backgroundColor = UIColor.blue
         let saveBtnX = UIScreen.main.bounds.width - btnW - margin
         let saveBtnY = btnY
         saveBtn.frame = CGRect(x: saveBtnX, y: saveBtnY, width: btnW, height: btnH)
