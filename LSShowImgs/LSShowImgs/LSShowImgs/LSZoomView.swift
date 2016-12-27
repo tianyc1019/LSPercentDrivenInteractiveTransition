@@ -43,9 +43,11 @@ class LSZoomView: UIControl {
             guard let photo = photo else {
                 return
             }
-            
+            backScale()
             if photo.isUrl! {
                 ///网络图片
+                
+                
                 self.scrollView?.isUserInteractionEnabled = false
                 /// 从网络加载图片
                 ///通过连接加载图片 现将小图显示，然后请求网络大图，请求完成后显示并添加手势

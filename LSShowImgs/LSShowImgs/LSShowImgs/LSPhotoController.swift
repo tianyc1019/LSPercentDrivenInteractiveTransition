@@ -128,15 +128,18 @@ extension LSPhotoController : UICollectionViewDelegate {
     }
     
 
-    /// cell消失时将图片回复初始比例
-    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-       
-        guard let cell = collectionView.cellForItem(at: indexPath)  else {
-            return
-        }
-        let cell1 = cell as! LSPhotoCell
-        cell1.zoomView?.backScale()
-    }
+//    /// cell消失时将图片回复初始比例
+//    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//       let cell = collectionView.cellForItem(at: indexPath) as? LSPhotoCell
+//        if cell != nil{
+//            cell?.zoomView?.backScale()
+//        }
+////        guard let cell = collectionView.cellForItem(at: indexPath)  else {
+////            return
+////        }
+////        let cell1 = cell as! LSPhotoCell
+//        
+//    }
     
 }
 // MARK: - 动画结束delegate
