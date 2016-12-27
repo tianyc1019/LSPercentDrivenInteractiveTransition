@@ -3,4 +3,4 @@
 https://www.jianshu.com/p/61236afa1d88
 
 
-LSShowImgs    图片浏览
+LSShowImgs    图片浏览demo
