@@ -34,11 +34,13 @@ class LSPhotoCell: UICollectionViewCell {
                     /// KingfisherOptionsInfoItem.transition(ImageTransition.fade(0.3)) 使图片渐渐显示
                     self.imageV.kf.setImage(with: ImageResource.init(downloadURL: url!), placeholder: smallImage, options: [KingfisherOptionsInfoItem.transition(ImageTransition.fade(0.3)),.targetCache(KingfisherManager.shared.cache)], progressBlock: nil, completionHandler: { (image, error, type, url) in
                         self.imageV.frame = ls_calculateFrameWithImage(image!)
+                        self.imageV.contentMode = UIViewContentMode.scaleAspectFit
                     })
                 }
             }else{
                 imageV.image = UIImage.init(named: photo.z_pic_url)
                 self.imageV.frame = ls_calculateFrameWithImage(imageV.image!)
+                self.imageV.contentMode = UIViewContentMode.scaleAspectFit
             }
             
         }

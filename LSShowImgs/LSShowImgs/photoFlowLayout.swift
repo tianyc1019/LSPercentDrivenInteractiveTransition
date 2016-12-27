@@ -10,8 +10,8 @@ import UIKit
 
 class photoFlowLayout: UICollectionViewFlowLayout {
     override func prepare() {
-        let clos : CGFloat = 4
-        let margin : CGFloat = 10
+        let clos : CGFloat = 3
+        let margin : CGFloat = 15
         
         let itemWH = (UIScreen.main.bounds.width - (clos + 1) * margin) / clos
         itemSize = CGSize(width: itemWH, height: itemWH)

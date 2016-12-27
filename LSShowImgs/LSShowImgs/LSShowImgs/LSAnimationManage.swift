@@ -169,6 +169,7 @@ extension LSAnimationManage : UIViewControllerAnimatedTransitioning {
             
             // 获取UIImageView
             let imageV :UIImageView = presDelegate.ls_getStartImageView(index)
+            imageV.contentMode = UIViewContentMode.scaleAspectFit
             transitionContext.containerView.addSubview(imageV)
             // 获取图片放大起始位置
             let startCGRect :CGRect = presDelegate.ls_getStartFrame(index)
@@ -197,6 +198,7 @@ extension LSAnimationManage : UIViewControllerAnimatedTransitioning {
             let lastIndexPath = dismiDelegate.ls_getCurrentIndexPath()
             // 获取图片对象
             let imageView = dismiDelegate.ls_getEndImageView()
+            imageView.contentMode = UIViewContentMode.scaleAspectFit
             transitionContext.containerView.addSubview(imageView)
             
             UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {

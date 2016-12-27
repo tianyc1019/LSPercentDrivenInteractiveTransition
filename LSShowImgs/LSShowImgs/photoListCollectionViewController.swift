@@ -74,11 +74,8 @@ class photoListCollectionViewController: UICollectionViewController {
         // Configure the cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)as!photoCollectionViewCell
         // 传入模型
-//        cell.photoImgV.frame = CGRect(x:0,y:0,width:cell.frame.width,height:cell.frame.height)
-//        cell.photoImgV.frame = CGRect(x:0,y:0,width:50,height:50)
-        cell.imgV.frame = CGRect(x:0,y:0,width:cell.frame.width,height:cell.frame.height)
         cell.photo = self.photos[indexPath.row]
-        cell.backgroundColor = UIColor.red
+        cell.imgV.frame = CGRect(x:0,y:0,width:cell.frame.width,height:cell.frame.height)
         return cell
     }
 
