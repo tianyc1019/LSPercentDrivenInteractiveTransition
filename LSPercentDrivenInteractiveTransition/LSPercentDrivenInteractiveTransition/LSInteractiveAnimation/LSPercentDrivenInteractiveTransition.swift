@@ -36,6 +36,13 @@ class LSPercentDrivenInteractiveTransition: UIPercentDrivenInteractiveTransition
         
         containerView.insertSubview((toViewController.view)!, belowSubview: (fromViewController.view)!)
         
+        
+        /// 加点阴影
+        fromViewController.view.layer.shadowOpacity = 0.8
+        fromViewController.view.layer.shadowColor = UIColor.black.cgColor
+        fromViewController.view.layer.shadowOffset = CGSize(width: 3, height: 3)
+        fromViewController.view.layer.shadowRadius = 5
+        
         self.formView = fromViewController.view
         self.toView = toViewController.view
         self.toView.frame = CGRect(x:x_to,y:0,width:self.toView.frame.width,height:self.toView.frame.height)
