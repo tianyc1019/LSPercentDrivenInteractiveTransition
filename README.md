@@ -19,7 +19,8 @@ fileprivate lazy var animation :LSAnimationManage = LSAnimationManage()
 ```
 
 2、实现管理器的代理
-```// MARK:-弹出图片协议
+```
+// MARK:-弹出图片协议
 protocol LSAnimationStartDelegate :class {   
    ///present前获取动画起始坐标
     func ls_getStartFrame(_ indexPath:IndexPath) -> CGRect
